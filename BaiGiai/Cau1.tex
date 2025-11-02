@@ -28,4 +28,84 @@ Chọn $\boxed{R_{f1}=10K,\; R_{f2}=18K \;\rightarrow\; R_1=5K,\; R_2=3.33K,\; R
 \textbf{Nhận xét:}\\
 - Với $V_1=4V$, $V_2=3V$ ,$V_3=2V$. Theo đề bài, $v_o=5V$ và kết quả mô phỏng được tại $v_o=5.008V$ đúng với yêu cầu thiết kế.\\
 
-b.
+b. Giả sử cả 2 OPAMP có $V_{io}=100\mu V, I_{io}=4nA, I_{ib}=18nA$.\\
+Xét tầng 1, ta có:
+\[
+\left\{
+\begin{aligned}
+I_{os} &= \lvert I^+ - I^- \rvert\\
+I_{ib} &= \dfrac{I^+ + I^-}{2}
+\end{aligned}
+\right.
+\;\Rightarrow\;
+\left\{
+\begin{array}{l}
+\left[
+\begin{aligned}
+I^+ &= 20nA \\
+I^- &= 16nA
+\end{aligned}
+\right. \\
+\\
+\left[
+\begin{aligned}
+I^+ &= 16nA \\
+I^- &= 20nA \qquad \text{\hfill (chọn)}
+\end{aligned}
+\right.
+\end{array}
+\right.
+\]
+\[
+\begin{aligned}
+\Delta V \text{ do } V_{os} \text{ gây ra:} 
+&\quad \pm \left( 1 + R_{f1}\left( \dfrac{1}{R_1} + \dfrac{1}{R_2} \right) \right)V_{os} = \pm 6V_{os} \\[6pt]
+\Delta V \text{ do } I_{ib} \text{ gây ra:} 
+&\quad \pm (I^- \cdot R_{f1}) = \pm 10K \cdot I^-
+\end{aligned}
+\]
+Vậy tại ngõ ra tầng 1, $\boxed{v_{o1} = -2V_1-3V_2}$, $\boxed{\Delta V_1 = \pm 6V_{os} \pm 10K \cdot I^-}$\\
+
+Xét tầng 2, ta có:
+\[
+\left\{
+\begin{aligned}
+I_{os} &= \lvert I^+ - I^- \rvert\\
+I_{ib} &= \dfrac{I^+ + I^-}{2}
+\end{aligned}
+\right.
+\;\Rightarrow\;
+\left\{
+\begin{array}{l}
+\left[
+\begin{aligned}
+I^+ &= 20nA \\
+I^- &= 16nA
+\end{aligned}
+\right. \\
+\\
+\left[
+\begin{aligned}
+I^+ &= 16nA \\
+I^- &= 20nA \qquad \text{\hfill (chọn)}
+\end{aligned}
+\right.
+\end{array}
+\right.
+\]
+\[
+\begin{aligned}
+&\Delta V \text{ do } V_{os} \text{ gây ra:} 
+\quad \pm \left( 1 + R_{f2}\left( \dfrac{1}{R_3} + \dfrac{1}{R_4} \right) \right)V_{os} = \pm 8V_{os} \\[6pt]
+&\Delta V \text{ do } I_{ib} \text{ gây ra:} 
+\quad \pm (I^- \cdot R_{f2}) = \pm 18K \cdot I^-\\
+&\Delta V \text{ sai số } \Delta V_1 \text{ gây ra:}
+\quad \pm 6V_{os} \pm 10K \cdot I^- \text{ (do độ lợi của $v_{o1}$ tại tầng 2 là -1 nên sai số không đổi) }
+\end{aligned}
+\]
+\[
+\rightarrow \Delta V_2 = \pm 8V_{os} \; \pm 18K \cdot I^- \; \pm 6V_{os} \; \pm 10K \cdot I^-
+					   = \pm 1.96mV
+\]
+
+Vậy tại ngõ ra tầng 2, $\boxed{v_{o2} = 2V_1 + 3V_2 -6V_3 + \Delta V_2}$
