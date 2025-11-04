@@ -1,1 +1,94 @@
 \section{Câu 3}
+\begin{flushleft}
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=1]{image/De_C3.png}
+\end{figure}
+
+\textbf{Cho mạch điện như hình trên} \\[4pt]
+\textbf{a/ Giả sử OPAMP lí tưởng. Tìm biểu thức liên hệ giữa  $V_0$ và $V_1$ và $V_2$} \\[8pt]
+\end{flushleft}
+
+\begin{flushleft}
+\text{Xét tại OPAMP 1, ta có:} \\[4pt]
+$V_{O1} = -\dfrac{2R}{R} \cdot V_1 = -2V_1$ (1) \\[8pt]
+\text{Xét tại OPAMP 2, ta có:} \\[4pt]
+$V_{O2} = -\dfrac{4R}{R} \cdot V_{O1}  - \dfrac{4R}{2R} \cdot V_2$  \\[8pt]
+$\Rightarrow V_{O2} = -4V_{O1} - 2V_2$ (2) \\[4pt] 
+\text{Từ (1) và (2) suy ra:} \\[4pt]
+$\Rightarrow V_0 = -4 \cdot (-2V_1) - 2V_2 = 8V_1 - 2V_2$ \\[8pt]
+\fbox{$\Rightarrow V_0 = 8V_1 - 2V_2 $}
+\end{flushleft}
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.5]{image/C3a.png}
+\end{figure}
+\textbf{Nhận xét:} \text{ sử dụng phần mềm mô phỏng cho OPAMP lý tưởng cho ngõ ra gần giống với tính toán.} \\[10pt]
+\begin{flushleft}
+\textbf{b/ Giả sử cả hai OPAMP có $V_{io}=30uV$, $I_{io}=0A$, $I_{ib}=20nA$.} \\[8pt]
+\textbf{Tìm ảnh hưởng của $V_{io}$ lên ngõ ra $V_o$.} \\[8pt]
+\textbf{Tìm giá trị của R để có thể bỏ qua ảnh hưởng của dòng $I_{ib}$.} \\[8pt]
+\end{flushleft}
+
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.2]{image/C3b.png}
+\end{figure}
+
+\begin{flushleft}
+\textbf{Xét ảnh hưởng của $V_{os}$ lên $V_0$:} \\[8pt]
+\textbf{Xét tầng 1:} \\[4pt]
+Theo định lý xếp chồng: \\[2pt]
+Cho $V_{os} = 0 \Rightarrow V_{o1} = -\dfrac{2R}{R}V_1 = -2V_1 \quad (1)$ \\[6pt]
+Cho $V_1 = 0 \Rightarrow V_{o1} = \left(1 + \dfrac{2R}{R}\right)V_{os} = 3V_{os} \quad (2)$ \\[8pt]
+Từ $(1)$ và $(2)$ $\Rightarrow V_{o1} = -2V_1 \pm 3V_{os}$ \\[10pt]
+
+\textbf{Xét tầng 2:} \\[4pt]
+Dùng định luật xếp chồng: \\[4pt]
+Cho $V_{o1} = V_2 = 0 \Rightarrow V_0 = \left(1 + \dfrac{4R}{R \parallel 2R}\right)V_{os} = 7V_{os} \quad (1)$ \\[8pt]
+Cho $V_{os} = 0 \Rightarrow V_0 = -\dfrac{4R}{R}V_{o1} - \dfrac{4R}{2R}V_2 = -4V_{o1} - 2V_2$ \\[8pt]
+Thay $V_{o1} = -2V_1 \pm 3V_{os}$ vào: \\[4pt]
+$V_0 = -4(-2V_1 \pm 3V_{os}) - 2V_2$ \\[6pt]
+$\Rightarrow V_0 = 8V_1 \pm 12V_{os} - 2V_2 \quad (2)$ \\[10pt]
+Từ (1) và (2): $\Rightarrow V_0 = 8V_1 - 2V_2 \pm 12V_{os} \pm 7V_{os}$ \\[4pt]
+$\Rightarrow$ \fbox{$V_0 = 8V_1 - 2V_2 \pm 12V_{os}$}
+\end{flushleft}
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.5]{image/C3b_vos.png}
+\end{figure}
+
+\textbf{Nhận xét:} \text{ sử dụng phần mềm mô phỏng cho thấy kết quả gần đúng với tính toán lý thuyết.} \\[10pt]
+\begin{flushleft}
+\textbf{Xét ảnh hưởng của $I_{ib}$ và $I_{os}$ tại ngõ ra:} \\[8pt]
+\textbf{Xét tầng 1:} \\[4pt]
+Cho $i^+ = i^- = 0 \Rightarrow V_{O1} = -\dfrac{2R}{R}V_1 = -2V_1 \quad (1)$ \\[6pt]
+Cho $V_1 = 0 \Rightarrow V^+ = V^- = 0 \Rightarrow I_2 = 0$ \\[4pt]
+$\Rightarrow I_1 = I^- \quad \Rightarrow \quad V_{O1} = I^- \cdot 2R \quad (2)$ \\[6pt]
+Từ (1) và (2): $V_{O1} = -2V_1 \pm I^- \cdot 2R \quad (5)$ \\[10pt]
+
+\textbf{Xét tầng 2:} \\[4pt]
+Cho $i^+ = i^- = 0 \Rightarrow V_{O2} = -4V_{O1} - 2V_2 \quad (3)$ \\[6pt]
+Cho $V_{O1} = V_2 = 0 \Rightarrow V_{O2} = I^- \cdot 4R \quad (4)$ \\[6pt]
+Từ (3) và (4): $ \Rightarrow V_{O2} = -4(-2V_1 + I^- \cdot 2R) - 2V_2 \pm I^- \cdot 4R$ \\[4pt]
+
+$\Rightarrow V_{O2} = 8V_1 - 2V_2 \pm I^- \cdot 12R$ \\[8pt]
+
+Với $I^- = 20\,\text{nA} \Rightarrow V_{O2} = 8V_1 - 2V_2 \pm 240\,\text{nA}\cdot R$ \\[8pt]
+$\Rightarrow V_{O2} = 8V_1 - 2V_2 \pm 160\,\text{n}\!A \cdot R$ \\[10pt]
+
+Để $I_{ib}$ và $I_{os}$ hạn chế ảnh hưởng đến ngõ ra thì: \\[4pt]
+$160\,\text{nA} \cdot R < 12V_{os}$ \\[4pt]
+$\Rightarrow 160\,\text{nA} \cdot R < 12.3\,\text{mV} \Rightarrow R < 2250\,\Omega$ \\[10pt]
+
+\text{Ta chọn sao cho: }\fbox{$\displaystyle R < 2.25\,\text{k}\Omega$}
+\end{flushleft}
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.5]{image/C3b_Iib.png}
+\end{figure}
+\textbf{Nhận xét:} \text{ sử dụng phần mềm mô phỏng với giá trị R=2k$\Omega$, kết quả tại ngõ ra có sự thay đổi nhẹ} \\
+\text{so với các điện trở khác lớn hơn 2k$\Omega$.} \\[10pt]
