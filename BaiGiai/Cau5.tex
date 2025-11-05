@@ -1,1 +1,77 @@
 \section{Câu 5}
+\begin{flushleft}
+\begin{flushleft}
+Cho mạch OPAMP như hình. Biết:\\[4pt]
+$V_1(t) = 2\sin(\omega t), \quad V_2(t) = -2\,\text{V}$ và $\dfrac{R_2}{R_1} = 3$.\\[8pt]
+Vẽ dạng sóng $v_o(t)$ trong các trường hợp sau:
+\end{flushleft}
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.5]{image/De_C5.png}
+\end{figure}
+
+\textbf{a/ OPAMP lý tưởng}\\[4pt]
+Mạch khuếch đại vi sai\\
+Áp dụng định lý xếp chồng\\[6pt]
+
+Cho $V_2 = 0$, $V_1 \neq 0$\\[4pt]
+Có: $I^+ = I^- = 0$\\[4pt]
+$\Rightarrow V^+ = V^-$\\[4pt]
+$\Rightarrow I_0 = I_1 \Rightarrow \dfrac{V_0 - V^-}{R_2} = \dfrac{V^-}{R_1}$\\[4pt]
+
+Với $R_2 = 3R_1 \Rightarrow V_0 = 4V^-$\\[4pt]
+Có: $V^- = V_1 \dfrac{R_2}{R_1 + R_2}$\\[4pt]
+$\Rightarrow V_0 = 4V_1 \dfrac{R_2}{R_1 + R_2} = 3V_1$\\[4pt]
+$\Rightarrow \boxed{V_0 = 3V_1} \quad (1)$\\[10pt]
+
+Cho $V_1 = 0$, $V_2 \neq 0$\\[4pt]
+$V_0 = -\dfrac{R_2}{R_1} \cdot V_2 = -3V_2$\\[4pt]
+$\Rightarrow \boxed{V_0 = -3V_2} \quad (2)$\\[10pt]
+
+Từ (1) và (2) $\Rightarrow V_0 = 3(V_1 - V_2)$\\[10pt]
+
+Với $V_1 = 2\sin \omega t + 4$, $V_2 = -2V_1$ ta được:\\[4pt]
+$\Rightarrow V_0 = 6\sin \omega t + 6 \; (V)$
+\end{flushleft}
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.5]{image/C5a.png}
+\end{figure}
+
+\begin{flushleft}
+\textbf{b/ OPAMP có $V_{OH} = 8{,}3V$, $V_{OL} = -8{,}5V$}\\[6pt]
+Kiểm tra điều kiện: $-8{,}5 \le V_{op} \le 8{,}3 (V)$\\[6pt]
+Ta có: $V_o = 6\sin(\omega t) + 6$\\[4pt]
+$\Rightarrow V_{o_{max}} = 12V$\\[2pt]
+$\Rightarrow V_{o_{min}} = 0V$\\[6pt]
+
+$\Rightarrow$ Sóng ngõ ra tại đầu trên bị xén khi $V_o = 8{,}3V$ $\Rightarrow V_{o_{max}} = 8{,}3V$\\[4pt]
+$\Rightarrow$ Sóng ngõ ra tại đầu dưới không bị xén $\Rightarrow V_{o_{min}} = 0V$\\[10pt]
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.5]{image/C5b.png}
+\end{figure}
+\textbf{Nhận xét:} \text{dạng sóng ngõ ra khi mô phỏng bị xén ở đỉnh trên đúng với dự tính theo lý thuyết.}
+
+\textbf{c/ OPAMP có $V_{OH} = 8{,}3V$, $V_{OL} = -1{,}2V$}\\[6pt]
+Kiểm tra điều kiện: $-1{,}2 \le V_{op} \le 8{,}3  $(V)$ $\\[6pt]
+Ta có: $V_o = 6\sin(\omega t) + 6$\\[4pt]
+$\Rightarrow V_{o_{max}} = 12V$\\[2pt]
+$\Rightarrow V_{o_{min}} = 0V$\\[6pt]
+
+$\Rightarrow$ Sóng tại ngõ ra có:\\[2pt]
+$\boxed{
+\begin{array}{l}
+V_{o_{max}} = 8{,}3V\\
+V_{o_{min}} = 0V
+\end{array}
+}$\\[10pt]
+\end{flushleft}
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.5]{image/C5c.png}
+\end{figure}
+\textbf{Nhận xét:} \text{dạng sóng ngõ ra có ngõ ra bị xén tại đỉnh trên và ngõ dưới không bị xén.}
