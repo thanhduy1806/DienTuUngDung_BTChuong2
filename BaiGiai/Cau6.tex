@@ -1,1 +1,80 @@
 \section{Câu 6}
+\begin{flushleft}
+Biên áp thay đổi: $10\,\text{mV} \rightarrow 30\,\text{mV}$\\[6pt]
+
+\textbf{a) Thiết kế khuếch đại tín hiệu lên 100 lần}\\
+Sử dụng khuếch đại không đảo:\\[6pt]
+$V_o = \left( 1 + \dfrac{R_2}{R_1} \right) V_{in}$\\[4pt]
+$\Rightarrow V_{out} = 100V_{in}$\\[4pt]
+Chọn $R_2 = 99R_1$\\[10pt]
+
+\textbf{b) Chọn linh kiện sao cho mạch hoạt động:}\\[4pt]
+$V_{in}: \quad 10\,\text{mV} \le V_{in} \le 30\,\text{mV}$\\[4pt]
+$V_{out}: \quad 1\,\text{V} \le V_{out} \le 3\,\text{V}$\\[6pt]
+
+Sử dụng OPAMP OPA07CD có các giá trị hoạt động trong khoảng nhiệt độ từ $0^oC$ đến $70^oC$, tham khảo datasheet:\\[4pt]
+$\begin{array}{l}
+V_{OS} = 85\,\mu V\\
+I_{ib} = 2{,}2\,\text{nA}\\
+I_{OS} = 1{,}6\,\text{nA}\\
+V_{OL} = -13\,\text{V}, \quad V_{OH} = +13\,\text{V} \quad (\text{với } R_L = 10\,k\Omega)
+\end{array}$\\[10pt]
+
+$\Rightarrow$ Có $V_{OS}$ rất nhỏ, không ảnh hưởng nhiều đến ngõ ra.\\[4pt]
+
+\end{flushleft}
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.15]{image/C6b.png}
+\end{figure}
+
+\begin{flushleft}
+\[
+\begin{cases}
+|I^+ - I^-| = 1{,}6\,\text{nA}\\
+I^+ + I^- = 4{,}4\,\text{nA}
+\end{cases}
+\Rightarrow
+\begin{cases}
+I^+ = 1{,}4\,\text{nA}\\
+I^- = 3\,\text{nA}
+\end{cases}
+\Rightarrow I_b = 3\,\text{nA}
+\]\\[8pt]
+
+\textbf{Xét ảnh hưởng do $V_{OS}$ lên ngõ ra}\\
+Dùng định lý xếp chồng:\\[4pt]
+Cho $V_{OS} = 0$\\[4pt]
+$\Rightarrow V_{out} = 100V_{in}$ \hfill (1)\\[6pt]
+Cho $V_{in} = 0$\\[4pt]
+$I_R = I_O \quad (\text{vì } I^+ + I^- = 0)$\\[4pt]
+$V_O = -100V_{OS}$ \hfill (2)\\[6pt]
+Từ (1) và (2): $V_{out} = 100V_{in} \pm 100V_{OS}$\\[10pt]
+
+\textbf{Xét ảnh hưởng $I_b$ và $I_{OS}$ lên ngõ ra}\\
+Dùng định lý xếp chồng:\\[4pt]
+Cho $I^+ + I^- = 0$\\[4pt]
+$\Rightarrow V_{out} = 100V_{in}$ \hfill (3)\\[6pt]
+Cho $V_{in} = 0$\\[4pt]
+$\Rightarrow V_{out} = I_b \cdot R = 3\,\text{nA} \cdot R = 3nR$ \hfill (4)\\[6pt]
+Từ (3) và (4): $V_{out} = 100V_{in} \pm 3nR$\\[8pt]
+
+Để giảm ảnh hưởng $I_b$ và $I_{OS}$ lên ngõ ra:\\[4pt]
+$3nR < 100V_{OS}$\\[4pt]
+$\Rightarrow R < 2{,}8\,\text{M}\Omega$ \hfill (5)\\[4pt]
+Chọn $R = 10\,k\Omega$\\[10pt]
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.6]{image/C6.png}
+\end{figure}
+
+\textbf{Nhận xét:}\\[4pt]
+Ảnh hưởng của $V_{OS}$ và $I_b, I_{OS}$ đến ngõ ra là nhỏ.\\
+Giá trị $R = 10\,k\Omega$ đảm bảo mạch hoạt động ổn định so với các điện trở có giá trị cao hơn.
+Khi gắn tải $R_L$, thì hệ số $A_v$ vẫn đạt gần như ổn định, hầu như không có sai số đáng kể.\\[4pt]
+Không cần sử dụng 2 chân điều chỉnh \textit{offset} của OPAMP với mạch này.
+Độ lợi tại ngõ ra khi mô phỏng xấp xỉ 100 gần bằng với yêu cầu của đề bài đưa ra
+\end{flushleft}
+
