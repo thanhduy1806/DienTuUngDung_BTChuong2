@@ -1,1 +1,130 @@
 \section{Câu 4}
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.5]{image/De_C4.png}
+\end{figure}
+\begin{flushleft}
+\textbf{Cho mạch điện như hình trên} \\[4pt]
+\textbf{a/ Giả sử OPAMP lý tưởng. Tìm hệ số $\dfrac{V_{O2}}{V_{in}}, \dfrac{V_{O1}}{V_{in}}, \dfrac{V_{O2}}{V_{O1}}$} \\[6pt]
+\text{Xét Tầng 1, ta có:} \\[4pt]
+Theo OPAMP lý tưởng: $V^+ = V^-$ và $i^+ = i^- = 0$ \\[4pt]
+Mà $V^+ = 0(V) \Rightarrow V^- = 0(V) \Rightarrow V_A = 0(V)$ \\[4pt]
+Có: $I_{in} = I_1 + I_2$ \\[8pt]
+
+$\Rightarrow -\dfrac{V_{in}}{R} = \dfrac{V_{O1} - V_A}{10R} + \dfrac{V_{O2} - V_A}{10R}$ \\[6pt]
+Vì $V_A = 0$, nên: \\[4pt]
+$\Rightarrow -\dfrac{V_{in}}{R} = \dfrac{V_{O1}}{10R} + \dfrac{V_{O2}}{10R}$ \\[6pt]
+$\Rightarrow -10V_{in} = V_{O1} + V_{O2}$ \quad (1) \\[10pt]
+
+\text{Xét Tầng 2, ta có:} \\[4pt]
+$V_{O2} = \left(1 + \dfrac{R}{R}\right) V_{O1} = 2V_{O1}$ \quad (2) \\[10pt]
+
+\text{Từ (2) và (1), ta được:} \\[4pt]
+$V_{O1} + 2V_{O1} = -10V_{in}$ \\[4pt]
+$\Rightarrow 3V_{O1} = -10V_{in}$ \\[4pt]
+$\Rightarrow \dfrac{V_{O1}}{V_{in}} = -\dfrac{10}{3}$ \\[10pt]
+
+
+$\Rightarrow \dfrac{V_{O2}}{V_{in}} = 2 \cdot \dfrac{V_{O1}}{V_{in}} = -\dfrac{20}{3}$ \\[10pt]
+
+\fbox{%
+$\begin{aligned}
+\dfrac{V_{O1}}{V_{in}} &= -\dfrac{10}{3} \\[6pt]
+\dfrac{V_{O2}}{V_{in}} &= -\dfrac{20}{3}
+\end{aligned}$} \\[10pt]
+$\Rightarrow \fbox{$\dfrac{V_{O2}}{V_{O1}} = 2$}$
+\end{flushleft}
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.6]{image/C4a_vo1_vin.png}
+      \includegraphics[scale=0.6]{image/C4a_vo2_vin.png}
+      \includegraphics[scale=0.6]{image/C4a_vo2_vo1.png}
+\end{figure}
+\textbf{Nhận xét:} \text{giá trị ngõ ra khi mô phỏng có sự chênh lệch nhẹ nhưng không đáng kể với giá trị tính}
+\text{được.}
+\begin{flushleft}
+\textbf{b/ Giả sử cả hai OPAMP có $V_{io}=12uV$, $I_{io}=12nA$, $I_{ib}=20nA$.} \\[8pt]
+\textbf{Tìm ảnh hưởng của $V_{io}$ lên ngõ ra $V_o$.} \\[8pt]
+\textbf{Tìm giá trị của R để có thể bỏ qua ảnh hưởng của dòng $I_{ib}$.} \\[8pt]     
+\textbf{Xét ảnh hưởng $V_{OS}$ lên ngõ ra $V_o$}\\
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.2]{image/C4b_vos_Iib.png}
+\end{figure}
+Xét tầng 1, ta có:\\[6pt]
+Cho $V_{O2} = V_{in} = 0$\\[4pt]
+$\Rightarrow V_{O1} = \left( 1 + \dfrac{10R}{10R \parallel R} \right) V_{OS}$\\[4pt]
+$\Rightarrow V_{O1} = 12V_{OS} \quad (1)$\\[10pt]
+
+Cho $V_{OS} = 0$\\[4pt]
+$\Rightarrow V_{O1} = -\dfrac{10R}{10R}V_{O2} - \dfrac{10R}{R}V_{in}$\\[4pt]
+$\Rightarrow V_{O1} = -(10V_{in} + V_{O2}) \quad (2)$\\[10pt]
+
+Từ (1) và (2) $\Rightarrow V_{O1} = -(10V_{in} + V_{O2}) \pm 12V_{OS} \quad (3)$
+\end{flushleft}
+
+\begin{flushleft}
+Xét tầng 2, ta có:\\[6pt]
+
+Cho $V_{O1} = 0$\\[4pt]
+$\Rightarrow V^+ = V^- = 0 \Rightarrow V_A = -V_{OS}$\\[4pt]
+$\Rightarrow I^+ = I^- = I_{O1} = 0$\\[4pt]
+$\Rightarrow I_1 = I_2$\\[4pt]
+$\Rightarrow \dfrac{V_{O2} - V_A}{R} = \dfrac{V_A - 0}{R}$\\[4pt]
+$\Rightarrow V_{O2} + V_{OS} = -V_{OS} \Rightarrow V_{O2} = -2V_{OS} \quad (1)$\\[10pt]
+
+Cho $V_{OS} = 0$\\[4pt]
+$\Rightarrow V_{O2} = \left( 1 + \dfrac{R}{R} \right) V_{O1}$\\[4pt]
+$\Rightarrow V_{O2} = 2V_{O1} \quad (2)$\\[10pt]
+
+Từ (1) và (2) $\Rightarrow V_{O2} = 2V_{O1} \pm 2V_{OS} \quad (4)$\\[4pt]
+Từ (3) và (4): \\[4pt]
+$\Rightarrow V_{O2} = -2\big[(10V_{in} + V_{O2}) \pm 12V_{OS}\big] \pm 2V_{OS}$\\[4pt]
+$\Rightarrow V_{O2} = \dfrac{-20}{3}V_{in} \pm 8V_{OS}$\\[8pt]
+
+$\boxed{V_{O2} = -\dfrac{20}{3}V_{in} \pm 8V_{OS}}$
+\end{flushleft}
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.6]{image/C4b_vo2_vin_vos.png}
+\end{figure}
+\textbf{Nhận xét:} \text{giá trị $v_o$ đo được bằng phần mềm mô phỏng gần đúng với giá trị tính toán.}
+
+\begin{flushleft}
+\textbf{Xét tầng 1, ta có:}\\[4pt]
+Cho $V_{O2} = V_{in} = 0$\\[4pt]
+$\Rightarrow V^+ = V^- = 0$ (V)\\[4pt]
+$\Rightarrow I_2 = \dfrac{V - 0}{10R} = 0$ (A)\\[4pt]
+$\Rightarrow I_1 = I = \dfrac{V_{O1} - V}{10R}$\\[4pt]
+$\Rightarrow V_{O2} = I \cdot 10R$ (A)\\[4pt]
+Cho $I^+ = I^- = 0$ (A)\\[4pt]
+$\Rightarrow V_{O1} = -(10V_{in} + V_{O2}) \quad (2)$\\[4pt]
+Từ (1) và (2):\\[4pt]
+$\Rightarrow V_{O1} = -(10V_{in} + V_{O2}) + I \cdot 10R \quad (3)$\\[10pt]
+
+\textbf{Xét tầng 2, ta có:}\\[4pt]
+Cho $V_{O1} = 0$\\[4pt]
+$\Rightarrow V_{O2} = I \cdot R$\\[4pt]
+Cho $I^+ = I^- = 0$\\[4pt]
+$\Rightarrow V_{O2} = \left( 1 + \dfrac{R}{R} \right) V_{O1}$\\[4pt]
+$\Rightarrow V_{O2} = 2V_{O1} \quad (4)$\\[4pt]
+Từ (3) và (4):\\[4pt]
+$\Rightarrow V_{O2} = 20V_{in} - 2V_{O2} \pm I \cdot 20R$\\[4pt]
+$\Rightarrow V_{O2} = -\dfrac{20}{3}V_{in} \pm \dfrac{I \cdot 20R}{3}$\\[8pt]
+Với $I = 26\,\text{nA}$ $\Rightarrow$ 
+$\boxed{V_{O2} = -\dfrac{20}{3}V_{in} \pm 1{,}733 \times 10^{-7} R}$\\[10pt]
+
+Để giảm tối thiểu ảnh hưởng $I_{os}$:\\[4pt]
+$1{,}733 \times 10^{-7} R < 8V_{OS}$\\[4pt]
+$\Rightarrow R < 553{,}85\,\Omega$
+\end{flushleft}
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.5]{image/C4b_Iib.png}
+\end{figure}
+\textbf{Nhận xét:} \text{chọn giá trị R=100 $\Omega$ cho thấy giá trị $V_o$ gần với tính toán hơn so với các giá trị }
+\text{gần 500 $\Omega$}
+
+
