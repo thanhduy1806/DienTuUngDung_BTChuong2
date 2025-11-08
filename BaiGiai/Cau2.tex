@@ -52,20 +52,30 @@ I_L=\frac{V_i}{R_L}=\frac{V_{o1}}{R_L}=\frac{V_{o2}-V_i}{R_L}.
     \includegraphics[scale=0.2]{image/C2_a2.jpg} 
 \end{figure}
 
-Từ mạch điện, ta có:
-\begin{flalign*}
-& V_{o2} - V_{o1} \cdot \frac{Z_L}{Z_L + R_x} = V_L \quad\Rightarrow\quad V_{o1} = \frac{V_L(Z_L + R_x)}{Z_L} && \\[1ex]
-& V_{o1} = \left(1 + \frac{R_2}{R_1}\right)\left(\frac{R_2}{R_1 + R_2}\right)(V_2 - V_{o2}) - \frac{R_2}{R_1}\cdot V_1 && \\[1ex]
-& \Rightarrow \frac{V_L(Z_L + R_x)}{Z_L} = \left(1 + \frac{R_2}{R_1}\right)\left(\frac{R_2}{R_1 + R_2}\right)(V_2 - V_L) - \frac{R_2}{R_1}\cdot V_1 && \\[2ex]
-& \Rightarrow I_L\cdot(Z_L + R_x) = \left(1 + \frac{R_2}{R_1}\right)\left(\frac{R_2}{R_1 + R_2}\right)(V_2 - I_L\cdot R_L) - \frac{R_2}{R_1}\cdot V_1 && \\[2ex]
-& \Rightarrow I_L\left[Z_L + R_x + R_L\cdot\left(1 + \frac{R_2}{R_1}\right)\left(\frac{R_2}{R_1 + R_2}\right)\right] = \left(1 + \frac{R_2}{R_1}\right)\left(\frac{R_2}{R_1 + R_2}\right)\cdot V_2 - \frac{R_2}{R_1}\cdot V_1 && \\[3ex]
-\end{flalign*}
+Xét OPAMP thứ nhất:
+\begin{align*}
+    \frac{V_1 - V_i}{R_1} &= \frac{V_{o1} - V_1}{R_2} \\
+    V_1 \left(\frac{1}{R_1} + \frac{1}{R_2}\right) &= \frac{V_i}{R_1} + \frac{V_{o1}}{R_2}
+\end{align*}
 
+Xét OPAMP thứ hai:
+\begin{align*}
+    \frac{V_2 - V_i}{R_1} &= \frac{V_{o2} - V_2}{R_2} \\
+    V_2 \left(\frac{1}{R_1} + \frac{1}{R_2}\right) &= \frac{V_i}{R_1} + \frac{V_{o2}}{R_2}
+\end{align*}
+
+Do đó:
+\begin{align*}
+    \frac{V_1}{R_1} + \frac{V_{o1}}{R_2} &= \frac{V_2}{R_1} + \frac{V_{o2}}{R_2} \\
+    \frac{V_1 - V_2}{R_1} &= \frac{V_{o2} - V_{o1}}{R_2}
+\end{align*}
+
+Dòng điện qua tải:
 \fbox{$\displaystyle
-\Rightarrow I_L = \frac{\left(1 + \frac{R_2}{R_1}\right)\left(\frac{R_2}{R_1 + R_2}\right)\cdot V_2 - \frac{R_2}{R_1}\cdot V_1}{Z_L + R_x + R_L\left(1 + \frac{R_2}{R_1}\right)\left(\frac{R_2}{R_1 + R_2}\right)}
+I_L = \frac{V_{o1} - V_{o2}}{R_x} = -\frac{(V_1 - V_2)R_2}{R_x \cdot R_1}
 $}
-\\
-Câu b\\
+\\[1em]
+Câu b)\\
 Đối với hình a:\\
 \begin{figure}[H]
     \centering
@@ -114,6 +124,8 @@ Ta có:
 & \Rightarrow \Delta V_1 = \left(I^- - \frac{I^+ \cdot R_2}{2R_1}\right)\cdot R_2 + V_A && \\[2ex]
 & = \left(I^- - \frac{I^+ \cdot R_2}{2R_1}\right)\cdot R_2 - I^+ \cdot \frac{R_2}{2} &&
 \end{flalign*}
+\\[1em]
+
 Đối với hình b:\\
 Xét ảnh hưởng do Vos:\\
 \begin{figure}[H]
