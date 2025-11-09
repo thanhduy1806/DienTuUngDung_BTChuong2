@@ -94,6 +94,10 @@ Xét tầng 2:\\
 & I_L = \frac{V^-}{R_L} = \frac{V^+}{R_L} = \frac{3V_{o2}}{R_L} &&
 \end{flalign*}
 
+\begin{flalign*}
+\fbox{$\displaystyle I_L = \frac{3V_{o2}}{R_L}$}
+\end{flalign*}
+\\[1em]
 Xét ảnh hưởng của dòng:\\
 \begin{figure}[H]
     \centering
@@ -122,7 +126,17 @@ Ta có:
 & = I^- + \frac{-I^+ \cdot R_2}{2R_1} && \\[2ex]
 & \Delta V_1 - V_A = I_1 \cdot R_2 && \\[1ex]
 & \Rightarrow \Delta V_1 = \left(I^- - \frac{I^+ \cdot R_2}{2R_1}\right)\cdot R_2 + V_A && \\[2ex]
-& = \left(I^- - \frac{I^+ \cdot R_2}{2R_1}\right)\cdot R_2 - I^+ \cdot \frac{R_2}{2} &&
+& = \left(I^- - \frac{I^+ \cdot R_2}{2R_1}\right)\cdot R_2 - I^+ \cdot \frac{R_2}{2} && \\[2ex]
+& \Rightarrow \Delta I_{L1} = \frac{\Delta V_1}{R_L} = \frac{\left(I^- - \frac{I^+\cdot R_2}{2R_1}\right)\cdot R_2 - I^+\cdot\frac{R_2}{2}}{R_L} &&
+\end{flalign*}
+
+\textbf{Xét tầng 2:}
+\begin{flalign*}
+& \Delta V_2 = (R_L\parallel R_3)\cdot (-I^-) && \\[2ex]
+& \Delta I_{L2} = \frac{R_L\cdot R_3}{(R_L + R_3)\cdot R_L}\cdot (-I^-) && \\[2ex]
+& \Delta I_{L2} = \frac{R_3}{R_L + R_3}\cdot (-I^-) && \\[3ex]
+& \Rightarrow \Delta I = \Delta I_{L1} + \Delta I_{L2} = \frac{\left(I^- - \frac{I^+\cdot R_2}{2R_1}\right)\cdot R_2 - I^+\cdot\frac{R_2}{2}}{R_L} - \frac{R_3}{R_L + R_3}\cdot I^- && \\[2ex]
+& \fbox{$\displaystyle \Delta I = \frac{\left(I^- - \frac{I^+\cdot R_2}{2R_1}\right)\cdot R_2 - I^+\cdot\frac{R_2}{2}}{R_L} - \frac{R_3}{R_L + R_3}\cdot I^-$}
 \end{flalign*}
 \\[1em]
 
@@ -140,15 +154,25 @@ Xét $0 = V_{os} - \frac{V_{o1} - V_{o2}}{R_2}$:
 & \Rightarrow \text{Ảnh hưởng của }V_{os}\text{ gây ra lỗi }\Delta V_{o1} = V_{os}(R_1 + R_2) && \\[2ex]
 & \boxed{\Rightarrow \Delta I_L = \frac{\Delta V_{o1}}{R_x + Z_L} = \frac{V_{os}(R_1 + R_2)}{R_x + Z_L}} &&
 \end{flalign*}
-
-\textbf{Khi ảnh hưởng của $I_b$ và $I_{os}$}
-
+\\[1em]
+\textbf{Khi ảnh hưởng của $I_b$ và $I_{os}$}\\
+\textbf{Xét tầng 1:}
 \begin{flalign*}
-& V^+ = -I^+\cdot R_2\parallel R_2 && \\[2ex]
-& I_1 = \frac{V^-}{R_1} = \frac{V^+}{R_1} = -\frac{I^+\cdot R_2\parallel R_2}{R_1} && \\[2ex]
+& V^+ = -I^+\cdot R_1\parallel R_2 && \\[2ex]
+& I_1 = \frac{V^-}{R_1} = \frac{V^+}{R_1} = -\frac{I^+\cdot R_1\parallel R_2}{R_1} && \\[2ex]
 & I_2 = I_1 + I^- && \\[2ex]
-& \Rightarrow I_2 = -\frac{I^+\cdot R_2\parallel R_2}{R_1} + I^- && \\[2ex]
+& \Rightarrow I_2 = -\frac{I^+\cdot R_1\parallel R_2}{R_1} + I^- && \\[2ex]
 & \Delta V_{o1} - V^- = I_2\cdot R_2 && \\[2ex]
-& \Rightarrow \Delta V_{o1} = \left(-\frac{I^+\cdot R_2\parallel R_2}{R_1} + I^-\right)\cdot R_2 + (-I^+\cdot R_2\parallel R_2) && \\[2ex]
-& \boxed{I_L = \frac{|\Delta V_{o1}|}{Z_L + R_x}} &&
+& \Rightarrow \Delta V_{o1} = \left(-\frac{I^+\cdot R_1\parallel R_2}{R_1} + I^-\right)\cdot R_2 + (-I^+\cdot R_1\parallel R_2) && \\[2ex]
+& I_L\text{ do }\Delta V_{o1} = \frac{|\Delta V_{o1}|}{Z_L + R_x} && \\[2ex]
+& \Rightarrow \Delta I_{L1} = \frac{\Delta V_{o1}}{Z_L + R_x} = \frac{\left(-\frac{I^+\cdot R_1\parallel R_2}{R_1} + I^-\right)\cdot R_2 + (-I^+\cdot R_1\parallel R_2)}{Z_L + R_x} &&
 \end{flalign*}
+
+\textbf{Xét tầng 2:}
+\begin{flalign*}
+& \Delta I_{L2} = \frac{R_L}{Z_L + R_L}\cdot (-I^-) && \\[3ex]
+& \Rightarrow \Delta I_L = \Delta I_{L1} + \Delta I_{L2} = \frac{\left(-\frac{I^+\cdot R_1\parallel R_2}{R_1} + I^-\right)\cdot R_2 + (-I^+\cdot R_1\parallel R_2)}{Z_L + R_x} + \frac{R_L}{Z_L + R_L}\cdot (-I^-) &&
+\end{flalign*}
+\begin{center}
+\fbox{$\displaystyle \Delta I_L = \frac{\left(-\frac{I^+\cdot R_1\parallel R_2}{R_1} + I^-\right)\cdot R_2 + (-I^+\cdot R_1\parallel R_2)}{Z_L + R_x} + \frac{R_L}{Z_L + R_L}\cdot (-I^-)$}
+\end{center}
